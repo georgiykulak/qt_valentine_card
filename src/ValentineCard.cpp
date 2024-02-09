@@ -34,15 +34,12 @@ ValentineCard::ValentineCard(QWidget *parent)
     setPalette(pal);
 
     auto* vLayout = new QVBoxLayout;
-    vLayout->setAlignment(Qt::AlignCenter);
-    auto* hLayout = new QHBoxLayout;
-    hLayout->setAlignment(Qt::AlignCenter);
+    vLayout->setAlignment(Qt::AlignHCenter);
 
     m_centralGif = new QLabel(this);
     m_centralGif->setMovie(m_firstMovie);
 
-    hLayout->addWidget(m_centralGif);
-    vLayout->addLayout(hLayout);
+    vLayout->addWidget(m_centralGif);
     setLayout(vLayout);
 
     m_firstMovie->start();
