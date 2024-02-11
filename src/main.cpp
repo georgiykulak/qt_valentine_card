@@ -5,6 +5,7 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+    a.setStyleSheet("QPushButton { background-color: gray }");
     ValentineCard w;
 
     if (!w.IsValid())

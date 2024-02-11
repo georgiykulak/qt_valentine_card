@@ -6,6 +6,7 @@
 class QMovie;
 class QLabel;
 class QPushButton;
+class UnaccessibleButton;
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -24,14 +25,19 @@ public:
 
 public slots:
     void OnButtonYesClicked();
+    void OnButtonNoHovered();
+
+protected:
+    void paintEvent(QPaintEvent* event) override;
 
 private:
     Ui::ValentineCard *ui;
     QMovie* m_firstMovie;
     QMovie* m_finalMovie;
     QLabel* m_centralGif;
-    QPushButton* m_buttonNo;
+    UnaccessibleButton* m_buttonNo;
     QPushButton* m_buttonYes;
     bool m_valid = false;
+    bool m_onFinalPage = false;
 };
 #endif // VALENTINECARD_HPP
