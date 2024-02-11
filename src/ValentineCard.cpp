@@ -15,6 +15,9 @@ ValentineCard::ValentineCard(QWidget *parent)
 {
     ui->setupUi(this);
     setAttribute(Qt::WA_DeleteOnClose);
+    // TODO: Make window resizeable taking into account layouts and buttons
+    setMinimumSize(600, 500);
+    setMaximumSize(600, 500);
 
     // TODO: Add to resources
     m_firstMovie = new QMovie("../res/first.gif");
@@ -45,8 +48,9 @@ ValentineCard::ValentineCard(QWidget *parent)
     m_firstMovie->start();
 
     m_buttonNo = new QPushButton("Ні", this);
+    m_buttonNo->move(50, 470);
     m_buttonYes = new QPushButton("Так", this);
-    m_buttonYes->move(m_buttonNo->size().width(), 0);
+    m_buttonYes->move(450, 470);
     connect(m_buttonYes, &QPushButton::pressed,
             this, &ValentineCard::OnButtonYesClicked);
 
